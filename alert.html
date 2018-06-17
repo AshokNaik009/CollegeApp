@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> BootStrap Alert</title>
+  
+<link href="css/bootstrap.css" rel="stylesheet" />
+<link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $('#btnSubmit').click(function(){
+                   $('#myAlert').show('fade');
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+<div class="alert alert-danger collapse">
+    <a id="myAlert" class="close" data-dismiss="alert">&times;</a> 
+  <strong>Error</strong>There is a problem in submitting the form
+</div>
+<div class="alert alert-success">
+        <strong>Success!</strong> Indicates a successful or positive action.
+      </div>
+      
+      <div class="alert alert-info">
+        <strong>Info!</strong> Indicates a neutral informative change or action.
+      </div>
+      
+      <div class="alert alert-warning">
+        <strong>Warning!</strong> Indicates a warning that might need attention.
+      </div>
+      
+      <div class="alert alert-danger">
+        <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+      </div>
+
+<button id="btnSubmit" class="btn btn-primary">submit</button>
+
+</body>    
+</html>

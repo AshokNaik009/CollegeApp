@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+   Forget Password
+</title>
+<style>
+ 
+.customDiv     /*  The div creating shadow Effect    */
+{ 
+    margin:3px;
+    min-height:90%;
+    text-align:center;
+    font-size:medium;
+    background-color:white;
+    
+}
+
+.drop-shadow {
+        -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+        box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+        border:none;
+    }
+
+
+   body {
+    background-color:cadetblue;
+   }
+   
+
+   .box
+   {
+        position:fixed;
+        left:35%;
+        width:40%; 
+        padding-top:10%;   
+   }
+   td  
+   {
+     padding:15%;
+   }
+</style>
+<script src="js/bootstrap.min.js"></script>
+<link href="css/bootstrap.css" rel="stylesheet" />
+<link href="css/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+   
+
+   <div class="customDiv drop-shadow box" >
+   <form method="POST" class="form-horizontal" style="padding-top:12px;" action="" enctype="multipart/form-data" > 
+     <center>Change Password</center>
+     <div class="form-group" >
+      <table class="table table-hover text-centered"  border="1"  style="font-size:25px" >      
+      <tr>
+    
+        <td > <input type="date"   class="form-control" name="dob" placeholder="Date of Birth" /></td>
+      </tr>
+      <tr>
+      
+        <td  cellsapcing="10" ><input type="text" class="form-control"  name="reg" placeholder="Register Number:" /> </td>
+      </tr>
+      <tr>
+      
+        <td cellsapcing="10" ><input type="text" class="form-control" maximum="8" name="email" placeholder="Email" /></td>
+      </tr>
+      
+      <tr>
+        <td>
+        <button class="btn btn-primary  "   name="chan" >Submit</button>
+        </td>
+       
+      </tr>
+      </table>  
+    </div>
+    <div >
+   
+       
+
+
+
+
+    </div>
+
+
+    <?php
+
+include 'connection.php';
+
+
+
+if(isset($_POST['chan']))
+{
+  $dob=$_POST['dob'];
+  $reg_no=$_POST['reg'];
+   $mail=$_POST['email'];
+
+   $query=mysql_query("Select DOB,reg_no,email from studreg where DOB='$dob' and reg_no='$reg_no' and email='$mail'  ");
+   
+
+  if($row=mysql_num_rows($query)>0)
+  {
+   
+    echo "You can change your Password";
+
+
+
+  }
+  else
+  {
+    echo "You cannot  change your Password";
+  }  
+
+
+}
+
+?>
+
+</form>
+
+
+
+   </div>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
